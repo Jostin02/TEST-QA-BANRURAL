@@ -41,9 +41,9 @@
 </body>
 
 <script>
-  let randomNumber = Math.random() * 10;
+  let randomNumber = Math.random() * 100;
 
-  const ATTEMPS = 5;
+  const ATTEMPS = 10;
   const guesses = document.querySelector('.guesses');
   const lastResult = document.querySelector('.lastResult');
   //primer error encontrado le falta un punto para saber que es una clase
@@ -64,14 +64,14 @@
     guesses.textContent += userGuess + ' ';
 //tiene un = por lo que no ejecuta este if
     if(userGuess == randomNumber) {
-      lastResult.textContent = '!!!Pérdistes!!!';
-      lastResult.style.backgroundColor = 'red';
+      lastResult.textContent = 'Felicitaciones! adivinaste el número!';
+      lastResult.style.backgroundColor = 'green';
       lowOrHi.textContent = '';
       setGameOver();
       //tiene un = por lo que no ejecuta este else
     } else if(guessCount == ATTEMPS) {
-      lastResult.textContent = 'Felicitaciones! adivinaste el número!';
-      lastResult.style.backgroundColor = 'green';
+      lastResult.textContent = '!!!Pérdiste!!!';
+      lastResult.style.backgroundColor = 'red';
       setGameOver();
     } else {
       lastResult.textContent = 'Incorrecto! ';
