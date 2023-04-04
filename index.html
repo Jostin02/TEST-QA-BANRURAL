@@ -46,7 +46,8 @@
   const ATTEMPS = 5;
   const guesses = document.querySelector('.guesses');
   const lastResult = document.querySelector('.lastResult');
-  const lowOrHi = document.querySelector('lowOrHi');
+  //primer error encontrado le falta un punto para saber que es una clase
+  const lowOrHi = document.querySelector('.lowOrHi');
   const guessSubmit = document.querySelector('.guessSubmit');
   const guessField = document.querySelector('.guessField');
 
@@ -56,17 +57,19 @@
   function checkGuess() {
 
     let userGuess = guessField.value;
-    if(guessCount === 1) {
+    // tiene un = de mas por lo que no ejecuta este if
+    if(guessCount == 1) {
       guesses.textContent = 'Número aleatorio anterior: ';
     }
     guesses.textContent += userGuess + ' ';
-
-    if(userGuess === randomNumber) {
+//tiene un = por lo que no ejecuta este if
+    if(userGuess == randomNumber) {
       lastResult.textContent = '!!!Pérdistes!!!';
       lastResult.style.backgroundColor = 'black';
       lowOrHi.textContent = '';
       setGameOver();
-    } else if(guessCount === ATTEMPS) {
+      //tiene un = por lo que no ejecuta este else
+    } else if(guessCount == ATTEMPS) {
       lastResult.textContent = 'Felicitaciones! adivinaste el número!';
       lastResult.style.backgroundColor = 'red';
       setGameOver();
@@ -84,7 +87,8 @@
     guessField.value = '';
     guessField.focus();
   }
-  guessSubmit.addeventListener('click', checkGuess);
+  //Add event listener estaba mal escrita
+  guessSubmit.addEventListener('click', checkGuess);
 
   function setGameOver() {
 	  guessField.disabled = true;
@@ -92,7 +96,8 @@
 	  resetButton = document.createElement('button');
 	  resetButton.textContent = 'Comienza un nuevo juego';
 	  document.body.appendChild(resetButton);
-	  resetButton.addeventListener('click', resetGame);
+    //addEventListener estaba mal escrita
+	  resetButton.addEventListener('click', resetGame);
   }
 
   function resetGame() {
@@ -110,8 +115,8 @@
 	  guessField.focus();
 
 	  lastResult.style.backgroundColor = 'white';
-
-	  randomNumber = Math.floor(Math.random()) + 1;
+    //para que esta pueda dar un resultado entre 1 y 100
+	  randomNumber = Math.floor(Math.random() * 100) + 1;
   }
 </script>
 </html>
