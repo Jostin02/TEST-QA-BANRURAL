@@ -41,7 +41,8 @@
 </body>
 
 <script>
-  let randomNumber = Math.random() * 100;
+  //nos da un numero entre 0 y 100 pero cuenta decimales
+  let randomNumber = Math.floor(Math.random()*101)
 //La cantidad de intentos era de 5 
   const ATTEMPS = 10;
   const guesses = document.querySelector('.guesses');
@@ -57,6 +58,18 @@
   function checkGuess() {
 
     let userGuess = guessField.value;
+    if (isNaN(userGuess)) {
+        guessField.value="";
+        lastResult.textContent = 'Ingrese solo Numeros ';
+      lastResult.style.backgroundColor = 'black';
+        return
+    }
+    if (!(userGuess - Math.floor(userGuess)==0)) {
+         guessField.value="";
+         lastResult.textContent = 'Ingrese solo numeros enteros';
+      lastResult.style.backgroundColor = 'black';
+         return
+    }
     // tiene un = de mas por lo que no ejecuta este if
     if(guessCount == 1) {
       guesses.textContent = 'Número aleatorio anterior: ';

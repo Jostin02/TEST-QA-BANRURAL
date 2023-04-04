@@ -6,6 +6,7 @@ Resolucion del problema
 * Primero se solucionaron los colores que solicitaba el cliente, Negro cuando el valor fuera mayo o menor, Rojo cuando el usuario haya perdido y Verde si el usuario adivino el numero
 * Se percato que Cuando el usuario ganaba marcaba que perdio y cuando perdia marcaba que ganaba, por lo que se corrigio el proceso para que tuviera logica, tal como lo solicitaba el cliente
 * Solo Marcaban 5 intentos y el Cliente solicitaba 10 por lo que se corrigio en el codigo
+* Cuando se ingresaba un numero decimal, la solucion no permitia ingresarlo pero el valor podia ser el correcto, entonces se encontro que la funcion que daba el numero correcto si aceptaba decimales por lo que se corrigio el proceso para que el valor correcto solo pudiera ser un entero y pudiera validar los rerrores de usuario correspondientes
 * Todo fue un metodo de prueba/error debido a que contaba con varios errores, y no mostraba sino los errores uno por uno conforme se fueron resolviendo. 
 * Al terminar de corregir la sintaxis se verifico que efectivamente el programa cumpliera con las espectativas del cliente que fueron detalladas al principio
 * Esta prueba debido a que no se conecta a ningun servicio web, no cuenta con una URL, no tiene conexion a una BD y tampoco corre en algun equipo en concreto no se pueden hacer mas que las pruebas de error del programa.
