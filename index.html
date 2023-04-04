@@ -42,7 +42,7 @@
 
 <script>
   let randomNumber = Math.random() * 100;
-
+//La cantidad de intentos era de 5 
   const ATTEMPS = 10;
   const guesses = document.querySelector('.guesses');
   const lastResult = document.querySelector('.lastResult');
@@ -64,12 +64,14 @@
     guesses.textContent += userGuess + ' ';
 //tiene un = por lo que no ejecuta este if
     if(userGuess == randomNumber) {
+      //Cuando encontraba el numero marcaba que perdio
       lastResult.textContent = 'Felicitaciones! adivinaste el número!';
       lastResult.style.backgroundColor = 'green';
       lowOrHi.textContent = '';
       setGameOver();
       //tiene un = por lo que no ejecuta este else
     } else if(guessCount == ATTEMPS) {
+      //cuando no encontraba el numero marcaba que gano
       lastResult.textContent = '!!!Pérdiste!!!';
       lastResult.style.backgroundColor = 'red';
       setGameOver();
