@@ -65,17 +65,17 @@
 //tiene un = por lo que no ejecuta este if
     if(userGuess == randomNumber) {
       lastResult.textContent = '!!!Pérdistes!!!';
-      lastResult.style.backgroundColor = 'black';
+      lastResult.style.backgroundColor = 'red';
       lowOrHi.textContent = '';
       setGameOver();
       //tiene un = por lo que no ejecuta este else
     } else if(guessCount == ATTEMPS) {
       lastResult.textContent = 'Felicitaciones! adivinaste el número!';
-      lastResult.style.backgroundColor = 'red';
+      lastResult.style.backgroundColor = 'green';
       setGameOver();
     } else {
       lastResult.textContent = 'Incorrecto! ';
-      lastResult.style.backgroundColor = 'green';
+      lastResult.style.backgroundColor = 'black';
       if(userGuess < randomNumber) {
         lowOrHi.textContent = 'El número es mayor!';
       } else if(userGuess > randomNumber) {
